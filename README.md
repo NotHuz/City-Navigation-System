@@ -49,3 +49,8 @@ https://localhost:7194
 
 
 Ngrok usage is also supported at the port mentioned above
+```
+## Additional
+
+-The area on which the project runs can be changed by swapping out the .osm file 
+-Currently the nodes have been limited to 20 places for perfomance's sake which can also be altered as needed.
