@@ -1,0 +1,1144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Navigation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#121212">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            touch-action: pan-x pan-y;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            background: #121212;
+        }
+
+        #controls {
+            padding: 12px 10px;
+            background: #1e1e1e;
+            border-bottom: 1px solid #2d2d2d;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            z-index: 1000;
+            flex-shrink: 0;
+        }
+
+        .controls-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+            .controls-row label {
+                font-size: 13px;
+                color: #aaa;
+                min-width: 40px;
+            }
+
+        select, button {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            font-size: 14px;
+            font-family: inherit;
+            flex: 1;
+            min-height: 40px;
+            touch-action: manipulation;
+            transition: all 0.2s ease;
+        }
+
+        select {
+            background: #2d2d2d;
+            color: #e0e0e0;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23aaa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 35px;
+        }
+
+            select:focus {
+                outline: none;
+                border-color: #4dabf7;
+                box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
+            }
+
+        .button-row {
+            display: flex;
+            gap: 6px;
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            flex: 1;
+            min-width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+            button:active {
+                transform: translateY(1px);
+                box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            }
+
+            button:hover {
+                background: linear-gradient(135deg, #3a4659 0%, #5a687d 100%);
+            }
+
+        #status-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 4px;
+            padding-top: 4px;
+            border-top: 1px solid #2d2d2d;
+        }
+
+        #status {
+            color: #888;
+            font-size: 13px;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #loadingIndicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 8px;
+        }
+
+        .loader {
+            display: none;
+            border: 2px solid #333;
+            border-top: 2px solid #4dabf7;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #map {
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+            z-index: 1;
+            /* Map remains light themed */
+        }
+
+        /* Floating results panel - Dark theme */
+        #results {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            left: 10px;
+            width: auto;
+            max-height: 40vh;
+            overflow-y: auto;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            padding: 12px;
+            z-index: 999;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .results-collapsed {
+            height: 50px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #252525;
+        }
+
+        .results-expanded {
+            max-height: 60vh;
+            background: #1e1e1e;
+        }
+
+        #results h3 {
+            margin: 0 0 8px;
+            font-size: 15px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #e0e0e0;
+        }
+
+        .toggle-results {
+            background: #333;
+            border: none;
+            color: #4dabf7;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+            .toggle-results:hover {
+                background: #3a3a3a;
+            }
+
+        .route-card {
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #252525;
+            border-left: 4px solid;
+            animation: fadeIn 0.25s ease-in;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+            .route-card.fastest {
+                border-left-color: #10b981;
+                background: linear-gradient(135deg, #252525 0%, #1e3a2e 100%);
+            }
+
+            .route-card.shortest {
+                border-left-color: #3b82f6;
+                background: linear-gradient(135deg, #252525 0%, #1e2a3e 100%);
+            }
+
+            .route-card.balanced {
+                border-left-color: #8b5cf6;
+                background: linear-gradient(135deg, #252525 0%, #2a1e3e 100%);
+            }
+
+        .route-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .route-metric {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin: 4px 0;
+        }
+
+            .route-metric span {
+                color: #aaa;
+            }
+
+            .route-metric b {
+                color: #e0e0e0;
+                font-weight: 600;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scrollbar styling for dark theme */
+        #results::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #results::-webkit-scrollbar-track {
+            background: #252525;
+            border-radius: 4px;
+        }
+
+        #results::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+
+            #results::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+
+        /* Mobile-specific improvements */
+        @media (min-width: 768px) {
+            #controls {
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 12px;
+            }
+
+            .controls-row {
+                flex: 1;
+            }
+
+            .button-row {
+                flex: 2;
+                margin-top: 0;
+            }
+
+            #results {
+                width: 320px;
+                left: auto;
+                max-height: 70vh;
+            }
+
+            select, button {
+                padding: 10px 12px;
+                min-height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-row button {
+                font-size: 12px;
+                padding: 10px 8px;
+            }
+
+            select {
+                font-size: 13px;
+            }
+
+            .route-card {
+                padding: 10px;
+            }
+        }
+
+        /* Prevent text selection on buttons */
+        button {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Better touch targets */
+        select, button {
+            min-height: 44px;
+        }
+
+        /* Hide results on very small screens when collapsed */
+        @media (max-height: 600px) {
+            .results-collapsed {
+                height: 40px;
+            }
+
+            #results h3 {
+                font-size: 14px;
+            }
+        }
+
+        /* Route line colors (brighter for contrast on light map) */
+        .route-glow {
+            filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+        }
+
+        /* Map popup dark theme to match our UI */
+        .leaflet-popup-content-wrapper {
+            background: #252525;
+            color: #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+        }
+
+        .leaflet-popup-tip {
+            background: #252525;
+        }
+
+        .leaflet-popup-content {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app-container">
+        <div id="controls">
+            <div class="controls-row">
+                <label>From:</label>
+                <select id="fromSelect"></select>
+            </div>
+
+            <div class="controls-row">
+                <label>To:</label>
+                <select id="toSelect"></select>
+            </div>
+
+            <div class="controls-row">
+                <label>Time:</label>
+                <select id="timeSelect">
+                    <option value="normal">Normal</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                    <option value="night">Night</option>
+                </select>
+            </div>
+
+            <div class="button-row">
+                <button onclick="findFastest()">Fastest</button>
+                <button onclick="findShortest()">Shortest</button>
+                <button onclick="findBalanced()">Balanced</button>
+                <button onclick="compareAll()">Compare</button>
+                <button onclick="clearRoute()">Clear</button>
+            </div>
+
+            <div id="status-area">
+                <span id="status">Ready</span>
+                <span id="loadingIndicator" style="display: none;">
+                    <div class="loader"></div>
+                    <span>Loading...</span>
+                </span>
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div id="results" class="results-collapsed">
+            <h3>
+                Route Details
+                <button class="toggle-results" onclick="toggleResults()">▼ Show</button>
+            </h3>
+            <div id="resultContent">No route selected</div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // CONFIGURATION - WORKS WITH BOTH LOCALHOST AND NGROK
+        // ============================================
+
+        // Auto-detect environment and set API base
+        function getApiBaseUrl() {
+            const currentUrl = window.location.origin;
+            const isLocalDevelopment = currentUrl.includes('localhost') ||
+                currentUrl.includes('127.0.0.1') ||
+                currentUrl.includes('ngrok.io');
+
+            // For local development (including ngrok), use relative path
+            if (isLocalDevelopment) {
+                console.log('Running in local/ngrok environment, using relative API path');
+                return 'api/navigation';
+            }
+
+            // For production deployment, you might need absolute URL
+            console.log('Running in production environment');
+            return `${currentUrl}/api/navigation`;
+        }
+
+        // Initialize API base
+        const API_BASE = getApiBaseUrl();
+        console.log('API Base URL:', API_BASE);
+        console.log('Current URL:', window.location.href);
+
+        let map, placeLayer, routeLayer;
+        let places = [];
+        let resultContent, status, loadingIndicator, resultsPanel;
+        let currentRoutes = [];
+        let isRequestInProgress = false;
+        let isResultsExpanded = false;
+
+        function initMap() {
+            // ORIGINAL LIGHT MAP TILES
+            map = L.map("map").setView([24.865, 67.01], 14);
+
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution: "&copy; OpenStreetMap",
+                maxZoom: 19,
+                minZoom: 10
+            }).addTo(map);
+
+            // Mobile touch improvements
+            map.tap && map.tap.disable();
+            map.scrollWheelZoom.disable();
+
+            // Zoom controls with dark theme styling
+            L.control.zoom({
+                position: 'topright',
+                zoomInTitle: 'Zoom in',
+                zoomOutTitle: 'Zoom out'
+            }).addTo(map);
+
+            placeLayer = L.layerGroup().addTo(map);
+            routeLayer = L.layerGroup().addTo(map);
+
+            // Handle mobile resize
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 100);
+
+            window.addEventListener('resize', () => {
+                setTimeout(() => map.invalidateSize(), 100);
+            });
+
+            // Prevent map dragging when interacting with controls
+            const mapDiv = document.getElementById('map');
+            const controls = document.getElementById('controls');
+            const results = document.getElementById('results');
+
+            [controls, results].forEach(element => {
+                if (element) {
+                    element.addEventListener('touchstart', (e) => {
+                        map.dragging.disable();
+                    });
+
+                    element.addEventListener('touchend', (e) => {
+                        setTimeout(() => map.dragging.enable(), 100);
+                    });
+                }
+            });
+        }
+
+        function toggleResults() {
+            const resultsPanel = document.getElementById('results');
+            const toggleBtn = document.querySelector('.toggle-results');
+
+            isResultsExpanded = !isResultsExpanded;
+
+            if (isResultsExpanded) {
+                resultsPanel.classList.remove('results-collapsed');
+                resultsPanel.classList.add('results-expanded');
+                toggleBtn.textContent = '▲ Hide';
+                toggleBtn.style.background = '#444';
+            } else {
+                resultsPanel.classList.remove('results-expanded');
+                resultsPanel.classList.add('results-collapsed');
+                toggleBtn.textContent = '▼ Show';
+                toggleBtn.style.background = '#333';
+            }
+
+            // Update map size
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 50);
+        }
+
+        async function loadPlaces() {
+            try {
+                showLoading();
+                setStatus("Loading locations...");
+
+                const fullUrl = `${API_BASE}/locations`;
+                console.log('Fetching from:', fullUrl);
+
+                const res = await fetchWithTimeout(fullUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!res.ok) {
+                    throw new Error(`Failed to load locations: ${res.status} ${res.statusText}`);
+                }
+
+                places = await res.json();
+                console.log('Loaded places:', places.length);
+
+                populateDropdowns();
+                renderMarkers();
+                setStatus("Locations loaded");
+            } catch (error) {
+                console.error('Error loading places:', error);
+                showMobileAlert(`Failed to load locations: ${error.message}`);
+                setStatus("Failed to load locations");
+            } finally {
+                hideLoading();
+            }
+        }
+
+        function populateDropdowns() {
+            const fromSelect = document.getElementById("fromSelect");
+            const toSelect = document.getElementById("toSelect");
+
+            fromSelect.innerHTML = "";
+            toSelect.innerHTML = "";
+
+            fromSelect.add(new Option("Select start", ""));
+            toSelect.add(new Option("Select destination", ""));
+
+            places.forEach(p => {
+                fromSelect.add(new Option(p.name, p.id));
+                toSelect.add(new Option(p.name, p.id));
+            });
+
+            // Style the dropdown options for dark theme
+            const style = document.createElement('style');
+            style.textContent = `
+                    option {
+                        background: #2d2d2d;
+                        color: #e0e0e0;
+                    }
+                    option:checked {
+                        background: #4dabf7;
+                        color: white;
+                    }
+                `;
+            document.head.appendChild(style);
+        }
+
+        function renderMarkers() {
+            placeLayer.clearLayers();
+            places.forEach(p => {
+                // Bright markers for contrast on light map
+                L.circleMarker([p.lat, p.lon], {
+                    radius: 7,
+                    color: "#1e40af", // Dark blue border
+                    fillColor: "#3b82f6", // Bright blue fill
+                    fillOpacity: 0.9,
+                    weight: 2,
+                    className: 'route-glow'
+                }).bindPopup(`<b style="color: #1e3a8a">${p.name}</b>`).addTo(placeLayer);
+            });
+        }
+
+        async function findFastest() { await runRoute("fastest"); }
+        async function findShortest() { await runRoute("shortest"); }
+        async function findBalanced() { await runRoute("balanced"); }
+
+        async function runRoute(type) {
+            if (isRequestInProgress) {
+                console.log('Request already in progress, ignoring');
+                return;
+            }
+
+            const fromSelect = document.getElementById("fromSelect");
+            const toSelect = document.getElementById("toSelect");
+            const timeSelect = document.getElementById("timeSelect");
+
+            const from = fromSelect.value;
+            const to = toSelect.value;
+            const time = timeSelect.value;
+
+            if (!from || !to || from === to) {
+                showMobileAlert("Please select valid start and destination locations");
+                return;
+            }
+
+            isRequestInProgress = true;
+            showLoading();
+            setStatus(`Finding ${type} route...`);
+
+            try {
+                const params = new URLSearchParams({
+                    from: from,
+                    to: to,
+                    timeOfDay: time
+                });
+
+                const fullUrl = `${API_BASE}/route-options?${params}`;
+                console.log(`Fetching ${type} route from:`, fullUrl);
+
+                const res = await fetchWithTimeout(fullUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!res.ok) {
+                    throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+                }
+
+                const data = await res.json();
+                console.log(`Route ${type} response:`, data);
+
+                // Extract route based on type
+                let route;
+                if (type === "fastest") {
+                    route = data.Fastest || data.fastest;
+                } else if (type === "shortest") {
+                    route = data.Shortest || data.shortest;
+                } else {
+                    route = data.Balanced || data.balanced;
+                }
+
+                if (!route) {
+                    throw new Error(`No ${type} route found in response`);
+                }
+
+                // Clear previous content
+                routeLayer.clearLayers();
+                resultContent.innerHTML = "";
+                currentRoutes = [];
+
+                // Extract coordinates
+                const coordinates = route.Coordinates || route.coordinates || [];
+                if (coordinates.length === 0) {
+                    throw new Error("Route has no coordinates");
+                }
+
+                // Store route
+                currentRoutes.push({
+                    type: type,
+                    coordinates: coordinates,
+                    route: route
+                });
+
+                // Draw and display
+                drawAnimatedRoute(coordinates, type);
+                renderCard(type, route);
+
+                // Auto-expand results on mobile
+                if (window.innerWidth < 768 && !isResultsExpanded) {
+                    toggleResults();
+                }
+
+                setStatus(`${type.charAt(0).toUpperCase() + type.slice(1)} route loaded`);
+            } catch (error) {
+                console.error(`Error finding ${type} route:`, error);
+                showMobileAlert(`Failed to find ${type} route: ${error.message}`);
+                setStatus(`Failed to load ${type} route`);
+            } finally {
+                isRequestInProgress = false;
+                hideLoading();
+            }
+        }
+
+        function drawAnimatedRoute(coordinates, type, duration = 15) {
+            const colors = {
+                fastest: "#10b981", // Emerald green
+                shortest: "#3b82f6", // Blue
+                balanced: "#8b5cf6"  // Purple
+            };
+
+            let index = 0;
+            const path = [];
+
+            const polyline = L.polyline([], {
+                color: colors[type],
+                weight: 5,
+                opacity: 0.9,
+                className: 'route-glow'
+            }).addTo(routeLayer);
+
+            const timer = setInterval(() => {
+                if (!coordinates[index]) {
+                    clearInterval(timer);
+                    return;
+                }
+
+                // Extract coordinates
+                const coord = coordinates[index];
+                let lat, lon;
+
+                if (coord.lat !== undefined && coord.lon !== undefined) {
+                    lat = coord.lat;
+                    lon = coord.lon;
+                } else if (coord.latitude !== undefined && coord.longitude !== undefined) {
+                    lat = coord.latitude;
+                    lon = coord.longitude;
+                } else {
+                    console.error("Invalid coordinate format:", coord);
+                    clearInterval(timer);
+                    return;
+                }
+
+                path.push([lat, lon]);
+                polyline.setLatLngs(path);
+                index++;
+
+                // Update map bounds as we draw
+                if (path.length === 1) {
+                    map.setView([lat, lon], 14);
+                } else if (path.length > 1) {
+                    const bounds = L.latLngBounds(path);
+                    map.fitBounds(bounds, { padding: [50, 50] });
+                }
+            }, duration);
+        }
+
+        function drawRouteImmediately(coordinates, type) {
+            const colors = {
+                fastest: "#10b981",
+                shortest: "#3b82f6",
+                balanced: "#8b5cf6"
+            };
+
+            const path = coordinates.map(coord => {
+                if (coord.lat !== undefined && coord.lon !== undefined) {
+                    return [coord.lat, coord.lon];
+                } else if (coord.latitude !== undefined && coord.longitude !== undefined) {
+                    return [coord.latitude, coord.longitude];
+                }
+                console.warn("Invalid coordinate in route:", coord);
+                return null;
+            }).filter(coord => coord !== null);
+
+            if (path.length === 0) {
+                console.error(`No valid coordinates for ${type} route`);
+                return null;
+            }
+
+            return L.polyline(path, {
+                color: colors[type],
+                weight: 5,
+                opacity: 0.9,
+                className: 'route-glow'
+            }).addTo(routeLayer);
+        }
+
+        function renderCard(type, routeData) {
+            console.log(`Rendering card for ${type}:`, routeData);
+
+            // Extract data with fallbacks
+            const distance = routeData.TotalDistance || routeData.totalDistance || 0;
+            const time = routeData.EstimatedTime || routeData.estimatedTime || 0;
+            const traffic = routeData.TrafficCondition || routeData.trafficCondition || "Unknown";
+
+            const cardHTML = `
+                    <div class="route-card ${type}">
+                        <div class="route-title">${type.toUpperCase()} ROUTE</div>
+                        <div class="route-metric"><span>Distance</span><b>${distance.toFixed(2)} km</b></div>
+                        <div class="route-metric"><span>Time</span><b>${time.toFixed(1)} min</b></div>
+                        <div class="route-metric"><span>Traffic</span><b>${traffic}</b></div>
+                    </div>
+                `;
+
+            // Update result content
+            const currentContent = resultContent.innerHTML;
+            if (currentContent === "No route selected") {
+                resultContent.innerHTML = cardHTML;
+            } else {
+                resultContent.innerHTML += cardHTML;
+            }
+        }
+
+        async function compareAll() {
+            if (isRequestInProgress) {
+                console.log('Request already in progress, ignoring');
+                return;
+            }
+
+            const fromSelect = document.getElementById("fromSelect");
+            const toSelect = document.getElementById("toSelect");
+            const timeSelect = document.getElementById("timeSelect");
+
+            const from = fromSelect.value;
+            const to = toSelect.value;
+            const time = timeSelect.value;
+
+            if (!from || !to || from === to) {
+                showMobileAlert("Please select valid start and destination locations");
+                return;
+            }
+
+            isRequestInProgress = true;
+            showLoading();
+            setStatus("Comparing routes...");
+
+            try {
+                const params = new URLSearchParams({
+                    from: from,
+                    to: to,
+                    timeOfDay: time
+                });
+
+                const fullUrl = `${API_BASE}/route-options?${params}`;
+                console.log('Fetching compare all from:', fullUrl);
+
+                const res = await fetchWithTimeout(fullUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!res.ok) {
+                    throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+                }
+
+                const data = await res.json();
+                console.log('Compare all response:', data);
+
+                // Clear previous
+                routeLayer.clearLayers();
+                resultContent.innerHTML = "";
+                currentRoutes = [];
+
+                // Define routes to process
+                const routesToProcess = [
+                    { type: "fastest", data: data.Fastest || data.fastest },
+                    { type: "shortest", data: data.Shortest || data.shortest },
+                    { type: "balanced", data: data.Balanced || data.balanced }
+                ];
+
+                let allPolylines = [];
+                let allBounds = [];
+
+                // Process each route
+                routesToProcess.forEach(routeInfo => {
+                    if (!routeInfo.data) {
+                        console.warn(`No ${routeInfo.type} route data found`);
+                        return;
+                    }
+
+                    const coordinates = routeInfo.data.Coordinates || routeInfo.data.coordinates || [];
+                    if (coordinates.length === 0) {
+                        console.warn(`No coordinates for ${routeInfo.type} route`);
+                        return;
+                    }
+
+                    // Store route
+                    currentRoutes.push({
+                        type: routeInfo.type,
+                        coordinates: coordinates,
+                        route: routeInfo.data
+                    });
+
+                    // Draw immediately
+                    const polyline = drawRouteImmediately(coordinates, routeInfo.type);
+                    if (polyline) {
+                        allPolylines.push(polyline);
+                        const bounds = polyline.getBounds();
+                        if (bounds.isValid()) {
+                            allBounds.push(bounds);
+                        }
+                    }
+
+                    // Render card
+                    renderCard(routeInfo.type, routeInfo.data);
+                });
+
+                // Fit map to show all routes
+                if (allBounds.length > 0) {
+                    const combinedBounds = allBounds.reduce((combined, bounds) => {
+                        return combined.extend(bounds);
+                    }, allBounds[0]);
+
+                    map.fitBounds(combinedBounds, { padding: [50, 50] });
+                }
+
+                // Auto-expand results on mobile
+                if (window.innerWidth < 768 && !isResultsExpanded) {
+                    toggleResults();
+                }
+
+                setStatus("Comparison loaded");
+            } catch (error) {
+                console.error('Error comparing routes:', error);
+                showMobileAlert(`Failed to compare routes: ${error.message}`);
+                setStatus("Failed to compare routes");
+            } finally {
+                isRequestInProgress = false;
+                hideLoading();
+            }
+        }
+
+        function clearRoute() {
+            routeLayer.clearLayers();
+            resultContent.innerHTML = "No route selected";
+            currentRoutes = [];
+            setStatus("Cleared");
+
+            // Collapse results on mobile after clear
+            if (window.innerWidth < 768 && isResultsExpanded) {
+                toggleResults();
+            }
+        }
+
+        // ============================================
+        // HELPER FUNCTIONS - MOBILE OPTIMIZED
+        // ============================================
+
+        function setStatus(msg) {
+            if (status) {
+                status.innerText = msg;
+                // Add visual flair for dark theme
+                if (msg.includes("loaded") || msg.includes("Connected")) {
+                    status.style.color = "#10b981";
+                    setTimeout(() => {
+                        status.style.color = "#888";
+                    }, 2000);
+                } else if (msg.includes("Error") || msg.includes("Failed")) {
+                    status.style.color = "#ef4444";
+                }
+            }
+        }
+
+        function showLoading() {
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'inline-flex';
+            }
+        }
+
+        function hideLoading() {
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+        }
+
+        async function fetchWithTimeout(url, options = {}, timeout = 30000) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), timeout);
+
+            try {
+                const response = await fetch(url, {
+                    ...options,
+                    signal: controller.signal
+                });
+                clearTimeout(id);
+                return response;
+            } catch (error) {
+                clearTimeout(id);
+                if (error.name === 'AbortError') {
+                    throw new Error(`Request timeout after ${timeout}ms`);
+                }
+                throw error;
+            }
+        }
+
+        function showMobileAlert(message) {
+            // Use browser alert on mobile (works better than custom dialogs)
+            alert(message);
+        }
+
+        function testApiConnection() {
+            console.log('Testing API connection...');
+            const testUrl = `${API_BASE}/routing-status`;
+            fetch(testUrl)
+                .then(res => {
+                    console.log('API Status:', res.status);
+                    return res.json();
+                })
+                .then(data => {
+                    console.log('API Response:', data);
+                    setStatus(`API Connected - ${data.Message}`);
+                })
+                .catch(err => {
+                    console.error('API Connection Failed:', err);
+                    setStatus('API Connection Failed');
+                });
+        }
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log('DOM Content Loaded');
+
+            // Get DOM elements
+            resultContent = document.getElementById("resultContent");
+            status = document.getElementById("status");
+            loadingIndicator = document.getElementById("loadingIndicator");
+            resultsPanel = document.getElementById("results");
+
+            if (!resultContent || !status) {
+                console.error('Required DOM elements not found');
+                return;
+            }
+
+            // Initialize map
+            try {
+                initMap();
+                console.log('Map initialized');
+            } catch (error) {
+                console.error('Failed to initialize map:', error);
+                showMobileAlert('Failed to initialize map. Please check console for details.');
+            }
+
+            // Load places and test connection
+            loadPlaces();
+            testApiConnection();
+
+            // Prevent pinch-zoom on iOS
+            document.addEventListener('gesturestart', function (e) {
+                e.preventDefault();
+            });
+
+            // Handle orientation changes
+            window.addEventListener('orientationchange', function () {
+                setTimeout(() => {
+                    map.invalidateSize();
+                }, 300);
+            });
+
+            // Add some visual feedback for dark theme
+            document.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('mousedown', function () {
+                    this.style.transform = 'translateY(1px)';
+                });
+                btn.addEventListener('mouseup', function () {
+                    this.style.transform = '';
+                });
+                btn.addEventListener('mouseleave', function () {
+                    this.style.transform = '';
+                });
+            });
+
+            console.log('Application initialized successfully');
+        });
+
+        // ============================================
+        // ERROR HANDLING
+        // ============================================
+
+        window.addEventListener('error', function (event) {
+            console.error('Global error:', event.error);
+            setStatus('Error occurred - check console');
+        });
+
+        window.addEventListener('unhandledrejection', function (event) {
+            console.error('Unhandled promise rejection:', event.reason);
+            setStatus('Promise error - check console');
+        });
+    </script>
+</body>
+</html>

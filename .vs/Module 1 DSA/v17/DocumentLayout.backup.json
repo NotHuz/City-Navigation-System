@@ -1,0 +1,265 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\VS projects\\Module 1 DSA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|d:\\vs projects\\module 1 dsa\\citynavigation\\controllers\\navigationcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|solutionrelative:citynavigation\\controllers\\navigationcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|d:\\vs projects\\module 1 dsa\\citynavigation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|solutionrelative:citynavigation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|d:\\vs projects\\module 1 dsa\\citynavigation\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|solutionrelative:citynavigation\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|d:\\vs projects\\module 1 dsa\\citynavigation\\wwwroot\\data\\export.osm||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|solutionrelative:citynavigation\\wwwroot\\data\\export.osm||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|d:\\vs projects\\module 1 dsa\\citynavigation\\citynavigation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|solutionrelative:citynavigation\\citynavigation.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\services\\automatedkarachigenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\services\\automatedkarachigenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\services\\pathfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\services\\pathfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\services\\place.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\services\\place.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\models\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\models\\route.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\models\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\models\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\models\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\models\\graph.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\models\\edge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\models\\edge.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|d:\\vs projects\\module 1 dsa\\citynavigation\\controllers\\citygraphservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD1CA2F8-09CF-40EC-94A5-F6306DC4A954}|CityNavigation\\CityNavigation.csproj|solutionrelative:citynavigation\\controllers\\citygraphservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|d:\\vs projects\\module 1 dsa\\module 1 dsa\\services\\syntheticcitygenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D56CE03-1888-4257-82DA-5A105C7E0A53}|Module 1 DSA\\Module 1 DSA.csproj|solutionrelative:module 1 dsa\\services\\syntheticcitygenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "export.osm",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\wwwroot\\Data\\export.osm",
+              "RelativeDocumentMoniker": "CityNavigation\\wwwroot\\Data\\export.osm",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\wwwroot\\Data\\export.osm",
+              "RelativeToolTip": "CityNavigation\\wwwroot\\Data\\export.osm",
+              "ViewState": "AgIAANljAAAAAAAAAAAAAPFjAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-19T14:27:38.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\Program.cs",
+              "RelativeDocumentMoniker": "CityNavigation\\Program.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\Program.cs",
+              "RelativeToolTip": "CityNavigation\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T16:04:19.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Edge.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Edge.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Models\\Edge.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Edge.cs",
+              "RelativeToolTip": "Module 1 DSA\\Models\\Edge.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T12:57:35.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Graph.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Graph.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Models\\Graph.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Graph.cs",
+              "RelativeToolTip": "Module 1 DSA\\Models\\Graph.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAIwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T12:56:50.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Node.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Node.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Models\\Node.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Node.cs",
+              "RelativeToolTip": "Module 1 DSA\\Models\\Node.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T12:57:17.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Route.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Route.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Models\\Route.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Models\\Route.cs",
+              "RelativeToolTip": "Module 1 DSA\\Models\\Route.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T12:57:49.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AutomatedKarachiGenerator.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\AutomatedKarachiGenerator.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Services\\AutomatedKarachiGenerator.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\AutomatedKarachiGenerator.cs",
+              "RelativeToolTip": "Module 1 DSA\\Services\\AutomatedKarachiGenerator.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T08:25:51.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PathFinder.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\PathFinder.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Services\\PathFinder.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\PathFinder.cs",
+              "RelativeToolTip": "Module 1 DSA\\Services\\PathFinder.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T12:58:17.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "place.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\place.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Services\\place.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\place.cs",
+              "RelativeToolTip": "Module 1 DSA\\Services\\place.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T21:48:18.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Program.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Program.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Program.cs",
+              "RelativeToolTip": "Module 1 DSA\\Program.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAQwG8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T12:52:21.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NavigationController .cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\Controllers\\NavigationController .cs",
+              "RelativeDocumentMoniker": "CityNavigation\\Controllers\\NavigationController .cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\Controllers\\NavigationController .cs",
+              "RelativeToolTip": "CityNavigation\\Controllers\\NavigationController .cs",
+              "ViewState": "AgIAADUBAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T16:03:18.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CityGraphService.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\Controllers\\CityGraphService.cs",
+              "RelativeDocumentMoniker": "CityNavigation\\Controllers\\CityGraphService.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\Controllers\\CityGraphService.cs",
+              "RelativeToolTip": "CityNavigation\\Controllers\\CityGraphService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T23:27:58.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.html",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\wwwroot\\Index.html",
+              "RelativeDocumentMoniker": "CityNavigation\\wwwroot\\Index.html",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\wwwroot\\Index.html",
+              "RelativeToolTip": "CityNavigation\\wwwroot\\Index.html",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-15T16:39:51.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CityNavigation.csproj",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\CityNavigation.csproj",
+              "RelativeDocumentMoniker": "CityNavigation\\CityNavigation.csproj",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\CityNavigation\\CityNavigation.csproj",
+              "RelativeToolTip": "CityNavigation\\CityNavigation.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-22T05:56:59.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SyntheticCityGenerator.cs",
+              "DocumentMoniker": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\SyntheticCityGenerator.cs",
+              "RelativeDocumentMoniker": "Module 1 DSA\\Services\\SyntheticCityGenerator.cs",
+              "ToolTip": "D:\\VS projects\\Module 1 DSA\\Module 1 DSA\\Services\\SyntheticCityGenerator.cs",
+              "RelativeToolTip": "Module 1 DSA\\Services\\SyntheticCityGenerator.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T12:58:36.626Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

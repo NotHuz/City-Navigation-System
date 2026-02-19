@@ -1,0 +1,46 @@
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Module 1 DSA.deps.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Module 1 DSA.runtimeconfig.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Module 1 DSA.exe
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\appsettings.Development.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\appsettings.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\CityNavigation.staticwebassets.runtime.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\CityNavigation.staticwebassets.endpoints.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\CityNavigation.exe
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\CityNavigation.deps.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\CityNavigation.runtimeconfig.json
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\CityNavigation.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\CityNavigation.pdb
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Itinero.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Itinero.IO.Osm.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Microsoft.OpenApi.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\OsmSharp.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\protobuf-net.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Reminiscence.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Module 1 DSA.dll
+D:\VS projects\Module 1 DSA\CityNavigation\bin\Release\net8.0\Module 1 DSA.pdb
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.csproj.AssemblyReference.cache
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\rpswa.dswa.cache.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.AssemblyInfoInputs.cache
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.AssemblyInfo.cs
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.csproj.CoreCompileInputs.cache
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.MvcApplicationPartsAssemblyInfo.cs
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.MvcApplicationPartsAssemblyInfo.cache
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\rjimswa.dswa.cache.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\rjsmrazor.dswa.cache.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\rjsmcshtml.dswa.cache.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\scopedcss\bundle\CityNavigation.styles.css
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\staticwebassets.build.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\staticwebassets.build.json.cache
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\staticwebassets.development.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\staticwebassets.build.endpoints.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\staticwebassets.upToDateCheck.txt
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavi.DDE24BCF.Up2Date
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\refint\CityNavigation.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.pdb
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\CityNavigation.genruntimeconfig.cache
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\ref\CityNavigation.dll

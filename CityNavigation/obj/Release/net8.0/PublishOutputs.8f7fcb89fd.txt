@@ -1,0 +1,21 @@
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Module 1 DSA.exe
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\CityNavigation.exe
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Module 1 DSA.deps.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Module 1 DSA.runtimeconfig.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\CityNavigation.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\CityNavigation.deps.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\CityNavigation.runtimeconfig.json
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\CityNavigation.pdb
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Itinero.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Itinero.IO.Osm.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\OsmSharp.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\protobuf-net.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Reminiscence.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Module 1 DSA.dll
+D:\VS projects\Module 1 DSA\CityNavigation\obj\Release\net8.0\PubTmp\Out\Module 1 DSA.pdb

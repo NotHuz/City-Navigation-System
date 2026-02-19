@@ -1,0 +1,152 @@
+[
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "DebugGraph",
+    "RelativePath": "api/Navigation/debug-graph",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "GetAllNodes",
+    "RelativePath": "api/Navigation/debug-nodes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "GetLocations",
+    "RelativePath": "api/Navigation/locations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "GetNode",
+    "RelativePath": "api/Navigation/node",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "GetNodes",
+    "RelativePath": "api/Navigation/nodes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ids",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "GetRoute",
+    "RelativePath": "api/Navigation/route",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "timeOfDay",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "GetRouteOptions",
+    "RelativePath": "api/Navigation/route-options",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "from",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "timeOfDay",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "GetRoutingStatus",
+    "RelativePath": "api/Navigation/routing-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "SearchNodes",
+    "RelativePath": "api/Navigation/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "q",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CityNavigation.Controllers.NavigationController",
+    "Method": "TestRoute",
+    "RelativePath": "api/Navigation/test-route",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

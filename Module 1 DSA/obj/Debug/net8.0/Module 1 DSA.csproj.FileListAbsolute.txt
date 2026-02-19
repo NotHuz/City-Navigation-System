@@ -1,0 +1,20 @@
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\Module 1 DSA.exe
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\Module 1 DSA.deps.json
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\Module 1 DSA.runtimeconfig.json
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\Module 1 DSA.dll
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\Module 1 DSA.pdb
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\Itinero.dll
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\OsmSharp.dll
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\protobuf-net.dll
+D:\VS projects\Module 1 DSA\Module 1 DSA\bin\Debug\net8.0\Reminiscence.dll
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.csproj.AssemblyReference.cache
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.AssemblyInfoInputs.cache
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.AssemblyInfo.cs
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.csproj.CoreCompileInputs.cache
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1.A1B0E165.Up2Date
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.dll
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\refint\Module 1 DSA.dll
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.pdb
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\Module 1 DSA.genruntimeconfig.cache
+D:\VS projects\Module 1 DSA\Module 1 DSA\obj\Debug\net8.0\ref\Module 1 DSA.dll
