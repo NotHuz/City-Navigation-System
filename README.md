@@ -19,8 +19,12 @@ A powerful city navigation system with ASP.NET Core backend and interactive Leaf
 - **Routing**: 3 optimization strategies (time, distance, balanced)
 
 ## Screenshots
+Desktop:
+<img width="919" height="436" alt="image" src="https://github.com/user-attachments/assets/7a58e432-0b2a-4385-bfca-fcd280e9454c" />
 
-*(Add screenshots here)*
+Phone:
+<img width="351" height="751" alt="image" src="https://github.com/user-attachments/assets/d760b6ba-d032-4329-9f11-80b4e5ba4cf3" />
+
 
 ##  Quick Start
 
